@@ -1,0 +1,180 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\spennington\\Workspace\\ShopClass\\WebSite-PQCStoryPointing\\WebSite-PQCStoryPointing\\Client\\WebSite-PQCStoryPointing.Client.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\spennington\\Workspace\\ShopClass\\WebSite-PQCStoryPointing\\WebSite-PQCStoryPointing\\Client\\WebSite-PQCStoryPointing.Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\spennington\\Workspace\\ShopClass\\WebSite-PQCStoryPointing\\WebSite-PQCStoryPointing\\Client\\WebSite-PQCStoryPointing.Client.csproj",
+        "projectName": "WebSite-PQCStoryPointing.Client",
+        "projectPath": "C:\\Users\\spennington\\Workspace\\ShopClass\\WebSite-PQCStoryPointing\\WebSite-PQCStoryPointing\\Client\\WebSite-PQCStoryPointing.Client.csproj",
+        "packagesPath": "C:\\Users\\spennington\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\spennington\\Workspace\\ShopClass\\WebSite-PQCStoryPointing\\WebSite-PQCStoryPointing\\Client\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\spennington\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/idtmanufacturing/BlazorShared/_packaging/BlazorShared/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/idtmanufacturing/Formulations/_packaging/FormulationsLibraries/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/idtmanufacturing/Purification/_packaging/PurificationsLibraries/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/idtmanufacturing/Shared/_packaging/Shared/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/idtmanufacturing/ab684d8e-6347-44fe-92d0-ee78b774facc/_packaging/OQCFeed/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\spennington\\Workspace\\ShopClass\\WebSite-PQCStoryPointing\\WebSite-PQCStoryPointing\\Shared\\WebSite-PQCStoryPointing.Shared.csproj": {
+                "projectPath": "C:\\Users\\spennington\\Workspace\\ShopClass\\WebSite-PQCStoryPointing\\WebSite-PQCStoryPointing\\Shared\\WebSite-PQCStoryPointing.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "CodeBeam.MudBlazor.Extensions": {
+              "target": "Package",
+              "version": "[6.6.0, )"
+            },
+            "IDT.Purification.Razor": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
+              "version": "[7.0.11, 7.0.11]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "browser-wasm": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\spennington\\Workspace\\ShopClass\\WebSite-PQCStoryPointing\\WebSite-PQCStoryPointing\\Shared\\WebSite-PQCStoryPointing.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\spennington\\Workspace\\ShopClass\\WebSite-PQCStoryPointing\\WebSite-PQCStoryPointing\\Shared\\WebSite-PQCStoryPointing.Shared.csproj",
+        "projectName": "WebSite-PQCStoryPointing.Shared",
+        "projectPath": "C:\\Users\\spennington\\Workspace\\ShopClass\\WebSite-PQCStoryPointing\\WebSite-PQCStoryPointing\\Shared\\WebSite-PQCStoryPointing.Shared.csproj",
+        "packagesPath": "C:\\Users\\spennington\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\spennington\\Workspace\\ShopClass\\WebSite-PQCStoryPointing\\WebSite-PQCStoryPointing\\Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\spennington\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/idtmanufacturing/BlazorShared/_packaging/BlazorShared/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/idtmanufacturing/Formulations/_packaging/FormulationsLibraries/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/idtmanufacturing/Purification/_packaging/PurificationsLibraries/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/idtmanufacturing/Shared/_packaging/Shared/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/idtmanufacturing/ab684d8e-6347-44fe-92d0-ee78b774facc/_packaging/OQCFeed/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "IDT.ServiceRegistryClient": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "IDT.Shared.Razor": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

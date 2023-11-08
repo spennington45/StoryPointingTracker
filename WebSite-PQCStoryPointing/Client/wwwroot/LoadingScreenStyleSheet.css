@@ -1,0 +1,149 @@
+﻿:root {
+    --purification-darkmode-background: #32333d;
+    --idt-ocean: #004B87;
+    --idt-sky: #48A9C5;
+    --idt-fog: #B1B3B3;
+    --rotate: 90deg;
+    --strand-width: 7.5rem;
+    --strand-height: 2rem;
+    --strand-line: .125rem;
+    --strand-ball: calc(var(--strand-height) * .5);
+    --animation-duration: .5s;
+    --animation-delay: calc(var(--animation-duration) * -.375);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: var(--purification-darkmode-background);
+        --strand-color: var(--idt-fog);
+        --strand-color-alt: var(--idt-sky);
+        --title-color: var(--idt-sky);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --background-color: white;
+        --strand-color: var(--idt-ocean);
+        --strand-color-alt: var(--idt-sky);
+        --title-color: var(--idt-ocean);
+    }
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: var(--background-color);
+}
+
+.title {
+    display: block;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 200%;
+    text-align: center;
+    color: var(--title-color);
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, 0%)
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100vh;
+    font-size: 16px;
+}
+
+.wrapper {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%) rotate(var(--rotate));
+}
+
+.dna {
+    width: var(--strand-width);
+}
+
+.strand {
+    position: relative;
+    width: var(--strand-width);
+    height: var(--strand-height);
+}
+
+    .strand:nth-child(2n) {
+        --strand-color: var(--strand-color-alt);
+    }
+
+    .strand::before, .strand::after {
+        content: "";
+        position: absolute;
+        background: var(--strand-color);
+        -webkit-animation-duration: calc(var(--animation-duration));
+        animation-duration: calc(var(--animation-duration));
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;
+        -webkit-animation-delay: calc(var(--s) * var(--animation-delay));
+        animation-delay: calc(var(--s) * var(--animation-delay));
+    }
+
+    .strand::before {
+        left: calc(var(--strand-ball) / 2);
+        top: calc((var(--strand-height) - var(--strand-line)) / 2);
+        width: calc(var(--strand-width) - var(--strand-ball));
+        height: var(--strand-line);
+        -webkit-animation-name: line;
+        animation-name: line;
+        will-change: transform;
+    }
+
+    .strand::after {
+        top: calc((var(--strand-height) - var(--strand-ball)) / 2);
+        width: var(--strand-ball);
+        height: var(--strand-ball);
+        border-radius: 50%;
+        box-shadow: calc(var(--strand-width) - var(--strand-ball)) 0 0 var(--strand-color);
+        -webkit-animation-name: ball;
+        animation-name: ball;
+        will-change: transform, box-shadow;
+    }
+
+@-webkit-keyframes line {
+    to {
+        transform: scaleX(0);
+    }
+}
+
+@keyframes line {
+    to {
+        transform: scaleX(0);
+    }
+}
+
+@-webkit-keyframes ball {
+    to {
+        transform: translateX(calc((var(--strand-width) - var(--strand-ball)) / 2));
+        box-shadow: 0 0 0 var(--strand-color);
+    }
+}
+
+@keyframes ball {
+    to {
+        transform: translateX(calc((var(--strand-width) - var(--strand-ball)) / 2));
+        box-shadow: 0 0 0 var(--strand-color);
+    }
+}

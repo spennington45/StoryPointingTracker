@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\spennington\\Workspace\\ShopClass\\WebSite-PQCStoryPointing\\WebSite-PQCStoryPointing\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\Users\\spennington\\Workspace\\ShopClass\\WebSite-PQCStoryPointing\\WebSite-PQCStoryPointing\\Client\\obj\\Debug\\net7.0\\build-gz\\6wDK7a5H.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\Users\\spennington\\Workspace\\ShopClass\\WebSite-PQCStoryPointing\\WebSite-PQCStoryPointing\\Client\\obj\\Debug\\net7.0\\scopedcss\\bundle\\WebSite-PQCStoryPointing.Client.styles.css",
+      "PackagePath": "staticwebassets\\WebSite-PQCStoryPointing.Client.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\spennington\\Workspace\\ShopClass\\WebSite-PQCStoryPointing\\WebSite-PQCStoryPointing\\Client\\wwwroot\\LoadingScreenStyleSheet.css",
+      "PackagePath": "staticwebassets\\LoadingScreenStyleSheet.css"
+    },
+    {
+      "Id": "C:\\Users\\spennington\\Workspace\\ShopClass\\WebSite-PQCStoryPointing\\WebSite-PQCStoryPointing\\Client\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\spennington\\Workspace\\ShopClass\\WebSite-PQCStoryPointing\\WebSite-PQCStoryPointing\\Client\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "C:\\Users\\spennington\\Workspace\\ShopClass\\WebSite-PQCStoryPointing\\WebSite-PQCStoryPointing\\Client\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.WebSite-PQCStoryPointing.Client.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.WebSite-PQCStoryPointing.Client.props",
+      "PackagePath": "build\\WebSite-PQCStoryPointing.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.WebSite-PQCStoryPointing.Client.props",
+      "PackagePath": "buildMultiTargeting\\WebSite-PQCStoryPointing.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.WebSite-PQCStoryPointing.Client.props",
+      "PackagePath": "buildTransitive\\WebSite-PQCStoryPointing.Client.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

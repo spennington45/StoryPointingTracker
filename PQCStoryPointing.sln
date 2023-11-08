@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34003.232
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSite-PQCStoryPointing.Server", "WebSite-PQCStoryPointing\Server\WebSite-PQCStoryPointing.Server.csproj", "{52DF8A11-D900-4048-B545-97134A83C680}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSite-PQCStoryPointing.Client", "WebSite-PQCStoryPointing\Client\WebSite-PQCStoryPointing.Client.csproj", "{B2528D45-030F-42E8-8DA7-204687766BFA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSite-PQCStoryPointing.Shared", "WebSite-PQCStoryPointing\Shared\WebSite-PQCStoryPointing.Shared.csproj", "{30602B0D-6A15-4AE5-8CC5-CA77645D0741}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52DF8A11-D900-4048-B545-97134A83C680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52DF8A11-D900-4048-B545-97134A83C680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52DF8A11-D900-4048-B545-97134A83C680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52DF8A11-D900-4048-B545-97134A83C680}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2528D45-030F-42E8-8DA7-204687766BFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2528D45-030F-42E8-8DA7-204687766BFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2528D45-030F-42E8-8DA7-204687766BFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2528D45-030F-42E8-8DA7-204687766BFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30602B0D-6A15-4AE5-8CC5-CA77645D0741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30602B0D-6A15-4AE5-8CC5-CA77645D0741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30602B0D-6A15-4AE5-8CC5-CA77645D0741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30602B0D-6A15-4AE5-8CC5-CA77645D0741}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7344BCC6-5D9F-4C48-AF1A-689B2E2BF43C}
+	EndGlobalSection
+EndGlobal

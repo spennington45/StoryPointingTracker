@@ -1,0 +1,94 @@
+﻿@page "/"
+@inject ISnackbar Snackbar
+@inject NavigationManager NavManager
+<HeadContent>
+    <PageTitle>Story Pointing Stats</PageTitle>
+</HeadContent>
+
+<MudChart ChartType="ChartType.Bar" ChartOptions="@_options" ChartSeries="@GetChartData()"
+          XAxisLabels="@_grid.Items.FirstOrDefault().SessionStats.Select(x => x.SessionDTM.Date.ToString("MM/dd/yyyy")).ToArray()"/>
+
+<MudContainer Class="pt-8">
+    <MudLoading Darken="true" LoaderType="LoaderType.Circular" Overlap="true" @bind-Loading="@_isLoading"></MudLoading>
+    <MudDataGrid @ref="_grid" ServerData="@(new Func<GridState<OverallUserStats>, Task<GridData<OverallUserStats>>>(ReloadData))"
+                 T="OverallUserStats" Filterable="true" FilterMode="DataGridFilterMode.Simple" RowClick="GoToSessions"
+                 Striped="true" ColumnResizeMode="ResizeMode.None" Hideable="true" Hover="true"
+                 Dense="true" Groupable="true" Loading="false" FixedHeader="true" ReadOnly="true" Height="60vh">
+        <Columns>
+            <PropertyColumn T="OverallUserStats" TProperty="string" Property="@(o => o.UserName)" Title="User Name" Sortable="true" HeaderStyle="width: 1px;"/>
+            <PropertyColumn T="OverallUserStats" TProperty="int" Property="@(o => o.PointingSessions)" Title="Pointing Sessions" Sortable="true" HeaderStyle="width: 1px;"/>
+            <PropertyColumn T="OverallUserStats" TProperty="int" Property="@(o => o.TotalStoriesPointed)" Title="Total Stories Pointed" Sortable="true" HeaderStyle="width: 1px;"/>
+            <PropertyColumn T="OverallUserStats" TProperty="int" Property="@(o => o.CorrectlyPointedStories)" Title="Correctly Pointed Stories" Sortable="true" HeaderStyle="width: 1px;"/>
+            <TemplateColumn T="OverallUserStats" Title="Correctly Pointed %" Sortable="false" HeaderStyle="width: 1px;">
+                <CellTemplate>@($"{context.Item.CorrectlyPointedPercent}%")</CellTemplate>
+            </TemplateColumn>
+            <PropertyColumn T="OverallUserStats" TProperty="double" Property="@(o => o.AverageDistanceFromCorrect)" Title="Average Distance From Correct" Sortable="true" HeaderStyle="width: 1px;"/>
+        </Columns>
+    </MudDataGrid>
+</MudContainer>
+
+@code {
+    private MudDataGrid<OverallUserStats>? _grid = new();
+    private readonly ChartOptions _options = new();
+    private bool _isLoading;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (_grid != null) await _grid.ReloadServerData();
+        _options.YAxisTicks = 10;
+        _options.YAxisLines = true;
+        StateHasChanged();
+        await base.OnInitializedAsync();
+    }
+
+    protected async Task<GridData<OverallUserStats>> ReloadData(GridState<OverallUserStats> gridState)
+    {
+        _isLoading = true;
+        try
+        {
+            return GetTestData();
+        }
+        catch (ArgumentException ex)
+        {
+            Snackbar.Add(ex.Message, Severity.Error);
+            return new GridData<OverallUserStats>
+                {
+                    Items = new List<OverallUserStats>(),
+                    TotalItems = 0
+                };
+        }
+        finally
+        {
+            _isLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    private void GoToSessions(DataGridRowClickEventArgs<OverallUserStats> item)
+    {
+        Snackbar.Add($"{item.Item.UserName} clicked", Severity.Info);
+        NavManager.NavigateTo($"/sessions/{item.Item.OverallUserStatsId}");
+    }
+
+    private static GridData<OverallUserStats> GetTestData()
+    {
+        return new GridData<OverallUserStats>
+        {
+            Items = TestDataHelper.GetTestData(),
+            TotalItems = 2
+        };
+    }
+
+    private List<ChartSeries> GetChartData()
+    {
+        if (_grid != null)
+        {
+            return _grid.Items.Select(item => new ChartSeries
+                {
+                    Name = item.UserName,
+                    Data = new[] { item.CorrectlyPointedPercent },
+                }).ToList();
+        }
+        return new();
+    }
+}

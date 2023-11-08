@@ -1,0 +1,86 @@
+﻿@page "/sessions/{OverallUserStatsId:int}"
+<MudText Typo="Typo.h3" Class="ma-10">@_userStats.UserName</MudText>
+<MudContainer Class="d-flex align-center flex-grow-1 gap-4">
+    <MudChart ChartType="ChartType.Line" ChartOptions="@_options" ChartSeries="@GetCorrectlyPointedStoriesChartData()"
+              XAxisLabels="@_storyPointSessions.Select(x => x.SessionDTM.Date.ToString("MM/dd/yyyy")).ToArray()"/>
+    <MudChart ChartType="ChartType.Line" ChartOptions="@_options2" ChartSeries="@GetPercentChartData()"
+              XAxisLabels="@_storyPointSessions.Select(x => x.SessionDTM.Date.ToString("MM/dd/yyyy")).ToArray()"/>
+    <MudChart ChartType="ChartType.Line" ChartOptions="@_options" ChartSeries="@GetAverageDistanceFromCorrectChartData()"
+              XAxisLabels="@_storyPointSessions.Select(x => x.SessionDTM.Date.ToString("MM/dd/yyyy")).ToArray()"/>
+</MudContainer>
+<MudPaper Class="ma-10">
+<MudTable Items="@_storyPointSessions" Hover="true" Breakpoint="Breakpoint.Sm" LoadingProgressColor="Color.Info" Striped="true">
+    <HeaderContent>
+        <MudTh>Date</MudTh>
+        <MudTh>Stories Pointed</MudTh>
+        <MudTh>Correctly Pointed Stories</MudTh>
+        <MudTh>Correctly Pointed Percent</MudTh>
+        <MudTh>Average Distance FromCorrect</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Date">@context.SessionDTM</MudTd>
+        <MudTd DataLabel="Stories Pointed">@context.StoriesPointed</MudTd>
+        <MudTd DataLabel="Correctly Pointed Stories">@context.CorrectlyPointedStories</MudTd>
+        <MudTd DataLabel="Correctly Pointed Percent">@($"{context.CorrectlyPointedPercent}%")</MudTd>
+        <MudTd DataLabel="Average Distance FromCorrect">@context.AverageDistanceFromCorrect</MudTd>
+    </RowTemplate>
+</MudTable>
+</MudPaper>
+
+@code {
+
+    [ParameterAttribute]
+    public int OverallUserStatsId { get; set; }
+    private List<StoryPointSessionStats> _storyPointSessions { get; set; } = new();
+    private OverallUserStats _userStats { get; set; } = new();
+    private readonly ChartOptions _options = new();
+    private readonly ChartOptions _options2 = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _userStats = TestDataHelper.GetTestData().FirstOrDefault(x => x.OverallUserStatsId == OverallUserStatsId) ?? new();
+        _storyPointSessions = _userStats.SessionStats.OrderBy(x => x.SessionDTM).ToList();
+        _options.YAxisLines = true;
+        _options.YAxisTicks = 1;
+        _options2.YAxisLines = true;
+        StateHasChanged();
+        await base.OnInitializedAsync();
+    }
+
+    private List<ChartSeries> GetAverageDistanceFromCorrectChartData()
+    {
+        return new List<ChartSeries>
+        {
+            new ChartSeries
+            {
+                Name = "Average Distance From Correct",
+                Data = _storyPointSessions.Select(x => x.AverageDistanceFromCorrect).ToArray()
+            },
+        };
+    }
+
+    private List<ChartSeries> GetCorrectlyPointedStoriesChartData()
+    {
+        return new List<ChartSeries>
+        {
+            new ChartSeries
+            {
+                Name = "Correctly Pointed Stories",
+                Data = _storyPointSessions.Select(x => (double)x.CorrectlyPointedStories).ToArray()
+            }
+        };
+    }
+
+    private List<ChartSeries> GetPercentChartData()
+    {
+
+        return new List<ChartSeries>
+        {
+            new ChartSeries
+            {
+                Name = "Correctly Pointed Percent",
+                Data = _storyPointSessions.Select(x => x.CorrectlyPointedPercent).ToArray()
+            },
+        };
+    }
+}
